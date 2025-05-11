@@ -1,213 +1,226 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Your Name</title>
+    <title>John Doe - Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Basic Reset */
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Dark Theme */
-        :root {
-            --primary-color: #2ecc71;
-            --dark-bg: #1a1a1a;
-            --text-color: #ffffff;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background: var(--dark-bg);
-            color: var(--text-color);
+            background: #f5f5f5;
+            color: #333;
             line-height: 1.6;
         }
 
         /* Header */
         header {
-            padding: 2rem;
+            background: #2a2a2a;
+            padding: 1.5rem;
             text-align: center;
-            border-bottom: 1px solid #333;
         }
 
-        .logo {
+        .name-header {
+            color: #fff;
             font-size: 2.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Navigation */
-        nav {
-            margin: 2rem 0;
+            margin-bottom: 1rem;
         }
 
         nav a {
-            color: var(--text-color);
+            color: #fff;
             text-decoration: none;
             margin: 0 1.5rem;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--primary-color);
+            color: #2ecc71;
         }
 
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
+        /* Main Content */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
-        .project-grid {
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .bio {
+            flex: 1;
+        }
+
+        .bio h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #2a2a2a;
+        }
+
+        .bio p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Testimonials Grid */
+        .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        .project-card {
-            background: #2a2a2a;
-            padding: 1.5rem;
-            border-radius: 8px;
+        .testimonial-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .project-card:hover {
+        .testimonial-item:hover {
             transform: translateY(-5px);
         }
 
-        /* Skills */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
+        .testimonial-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
         }
 
-        .skill-item {
-            background: #333;
-            padding: 0.5rem 1rem;
+        .linkedin-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
             border-radius: 20px;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 5px;
+            text-decoration: none;
+            color: #0077b5;
         }
 
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            background: #333;
-            border: none;
-            color: white;
-            border-radius: 4px;
-        }
-
-        button {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        button:hover {
-            opacity: 0.9;
+        /* Footer */
+        footer {
+            background: #2a2a2a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            nav {
-                display: flex;
+            .profile-section {
                 flex-direction: column;
-                gap: 1rem;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">اسمك هنا</a>
+        <h1 class="name-header">JOHN DOE</h1>
         <nav>
-            <a href="#about">عني</a>
-            <a href="#projects">المشاريع</a>
-            <a href="#skills">المهارات</a>
-            <a href="#contact">اتصل بي</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>مرحبا، أنا [اسمك]</h2>
-        <p>مطور ويب متخصص في إنشاء حلول تقنية مبتكرة...</p>
-    </section>
-
-    <section id="projects">
-        <h2>المشاريع الأخيرة</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>مشروع ١</h3>
-                <p>وصف المشروع الأول...</p>
+    <div class="container">
+        <!-- Profile Section -->
+        <section id="about" class="profile-section">
+            <img src="your-photo.jpg" alt="John Doe" class="profile-img">
+            <div class="bio">
+                <h2>Digital Creator & Tech Innovator</h2>
+                <p>With over 7 years of experience in digital transformation, I specialize in creating impactful technological solutions that drive business growth. My expertise spans UX/UI design, full-stack development, and cloud architecture...</p>
             </div>
-            <!-- أضف المزيد من البطاقات -->
-        </div>
-    </section>
+        </section>
 
-    <section id="skills">
-        <h2>المهارات التقنية</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <i class="fab fa-html5"></i>
-                HTML5
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-item">
+                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        Profile
+                    </a>
+                    <img src="testimonial1.jpg" alt="Client 1" class="testimonial-img">
+                </div>
+
+                <!-- Repeat for other testimonials -->
+                <div class="testimonial-item">
+                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        Profile
+                    </a>
+                    <img src="testimonial2.jpg" alt="Client 2" class="testimonial-img">
+                </div>
+
+                <div class="testimonial-item">
+                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        Profile
+                    </a>
+                    <img src="testimonial3.jpg" alt="Client 3" class="testimonial-img">
+                </div>
+
+                <div class="testimonial-item">
+                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        Profile
+                    </a>
+                    <img src="testimonial4.jpg" alt="Client 4" class="testimonial-img">
+                </div>
             </div>
-            <!-- أضف المزيد من المهارات -->
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <section id="contact">
-        <h2>تواصل معي</h2>
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-            <input type="text" name="name" placeholder="اسمك" required>
-            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-            <textarea name="message" rows="5" placeholder="رسالتك..." required></textarea>
-            <button type="submit">إرسال</button>
-        </form>
-    </section>
-
-    <script>
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animation on Scroll
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight * 0.8) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        });
-    </script>
+    <footer>
+        <p>© 2024 John Doe. All rights reserved.</p>
+    </footer>
 </body>
 </html>
