@@ -26,6 +26,7 @@
             line-height: 1.7;
         }
 
+        /* Profile Section */
         .profile-section {
             max-width: 1200px;
             margin: 4rem auto;
@@ -43,20 +44,24 @@
             border: 3px solid var(--accent);
         }
 
+        .bio {
+            flex: 1;
+        }
+
         .bio h1 {
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 1.5rem;
         }
 
-        /* تحسين قسم التوصيات */
+        /* Testimonials Grid */
         .testimonials-grid {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 4rem auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
         .testimonial-item {
@@ -64,42 +69,36 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s;
-            background: var(--card-bg);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
         }
 
         .testimonial-img {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .testimonial-content {
-            padding: 1.5rem;
-        }
-
-        .testimonial-text {
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            color: #ccc;
+            max-height: 300px;
+            object-fit: contain;
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 10px;
         }
 
         .linkedin-badge {
-            display: inline-flex;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 119, 181, 0.9);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: flex;
             align-items: center;
             gap: 8px;
-            background: #0077b5;
-            color: white !important;
-            padding: 8px 15px;
-            border-radius: 20px;
             text-decoration: none;
-            transition: opacity 0.3s;
+            color: white !important;
         }
 
-        .linkedin-badge:hover {
-            opacity: 0.9;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
             .profile-section {
                 flex-direction: column;
@@ -111,76 +110,61 @@
                 height: 250px;
             }
 
-            .testimonial-img {
-                height: 150px;
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Profile Section -->
     <section class="profile-section">
         <img src="images/Salah.jpg" alt="Salah Mosbah" class="profile-img">
         <div class="bio">
             <h1>Salah Mosbah</h1>
-            <p>Cybersecurity Expert | Ethical Hacker | Security Consultant</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </section>
 
+    <!-- Testimonials Grid -->
     <div class="testimonials-grid">
-        <!-- Testimonial 1 -->
         <div class="testimonial-item">
-            <img src="images/1.png" class="testimonial-img" alt="Client 1">
-            <div class="testimonial-content">
-                <div class="testimonial-text">
-                    "Salah demonstrated exceptional expertise in securing our network infrastructure."
-                </div>
-                <a href="https://linkedin.com/in/client1" class="linkedin-badge" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    View Profile
-                </a>
-            </div>
+            <a href="https://www.linkedin.com/in/salah-mosbah" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/1.png" class="testimonial-img" alt="Testimonial 1">
         </div>
 
-        <!-- Testimonial 2 -->
+        <!-- Repeat for other 3 testimonials -->
         <div class="testimonial-item">
-            <img src="images/2.png" class="testimonial-img" alt="Client 2">
-            <div class="testimonial-content">
-                <div class="testimonial-text">
-                    "His penetration testing revealed critical vulnerabilities we had missed."
-                </div>
-                <a href="https://linkedin.com/in/client2" class="linkedin-badge" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    View Profile
-                </a>
-            </div>
+            <a href="https://www.linkedin.com/in/salah-mosbah" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/2.png" class="testimonial-img" alt="Testimonial 2">
         </div>
 
-        <!-- Testimonial 3 -->
         <div class="testimonial-item">
-            <img src="images/3.png" class="testimonial-img" alt="Client 3">
-            <div class="testimonial-content">
-                <div class="testimonial-text">
-                    "Professional approach and clear communication throughout the project."
-                </div>
-                <a href="https://linkedin.com/in/client3" class="linkedin-badge" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    View Profile
-                </a>
-            </div>
+            <a href="https://www.linkedin.com/in/salah-mosbah" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/3.png" class="testimonial-img" alt="Testimonial 3">
         </div>
 
-        <!-- Testimonial 4 -->
         <div class="testimonial-item">
-            <img src="images/4.png" class="testimonial-img" alt="Client 4">
-            <div class="testimonial-content">
-                <div class="testimonial-text">
-                    "Highly recommended for enterprise security solutions."
-                </div>
-                <a href="https://linkedin.com/in/client4" class="linkedin-badge" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    View Profile
-                </a>
-            </div>
+            <a href="https://www.linkedin.com/in/salah-mosbah" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/4.png" class="testimonial-img" alt="Testimonial 4">
         </div>
     </div>
 </body>
