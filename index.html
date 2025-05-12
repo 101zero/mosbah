@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salah Mosbah</title>
+    <title>Salah Mosbah - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,50 +13,27 @@
             font-family: 'Arial', sans-serif;
         }
 
+        :root {
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --accent: #2ecc71;
+            --text: #e0e0e0;
+        }
+
         body {
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: #2a2a2a;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .name-header {
-            color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #2ecc71;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+            background: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.7;
         }
 
         /* Profile Section */
         .profile-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
             display: flex;
             gap: 3rem;
             align-items: center;
-            margin-bottom: 4rem;
         }
 
         .profile-img {
@@ -65,38 +41,33 @@
             height: 350px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 3px solid var(--accent);
         }
 
         .bio {
             flex: 1;
         }
 
-        .bio h2 {
-            font-size: 2.2rem;
+        .bio h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
             margin-bottom: 1.5rem;
-            color: #2a2a2a;
-        }
-
-        .bio p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #666;
         }
 
         /* Testimonials Grid */
         .testimonials-grid {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
         }
 
         .testimonial-item {
             position: relative;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
@@ -108,29 +79,21 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
+            filter: grayscale(30%);
         }
 
         .linkedin-badge {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(255,255,255,0.9);
-            padding: 5px 10px;
+            background: rgba(0, 119, 181, 0.9);
+            padding: 6px 12px;
             border-radius: 20px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             text-decoration: none;
-            color: #0077b5;
-        }
-
-        /* Footer */
-        footer {
-            background: #2a2a2a;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            color: white !important;
         }
 
         /* Responsive Design */
@@ -158,69 +121,49 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="name-header">SALAH MOSBAH</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <img src="images/your-photo.jpg" alt="Salah Mosbah" class="profile-img">
+        <div class="bio">
+            <h1>Salah Mosbah</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </section>
 
-    <div class="container">
-        <!-- Profile Section -->
-        <section id="about" class="profile-section">
-            <img src="your-photo.jpg" alt="Salah Mosbah" class="profile-img">
-            <div class="bio">
-                <h2>Digital Creator & Tech Innovator</h2>
-                <p>With over 7 years of experience in digital transformation, I specialize in creating impactful technological solutions that drive business growth. My expertise spans UX/UI design, full-stack development, and cloud architecture...</p>
-            </div>
-        </section>
+    <!-- Testimonials Grid -->
+    <div class="testimonials-grid">
+        <div class="testimonial-item">
+            <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/testimonial1.jpg" class="testimonial-img" alt="Testimonial 1">
+        </div>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Client Testimonials</h2>
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-item">
-                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        Profile
-                    </a>
-                    <img src="testimonial1.jpg" alt="Client 1" class="testimonial-img">
-                </div>
+        <!-- Repeat for other 3 testimonials -->
+        <div class="testimonial-item">
+            <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/testimonial2.jpg" class="testimonial-img" alt="Testimonial 2">
+        </div>
 
-                <!-- Repeat for other testimonials -->
-                <div class="testimonial-item">
-                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        Profile
-                    </a>
-                    <img src="testimonial2.jpg" alt="Client 2" class="testimonial-img">
-                </div>
+        <div class="testimonial-item">
+            <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/testimonial3.jpg" class="testimonial-img" alt="Testimonial 3">
+        </div>
 
-                <div class="testimonial-item">
-                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        Profile
-                    </a>
-                    <img src="testimonial3.jpg" alt="Client 3" class="testimonial-img">
-                </div>
-
-                <div class="testimonial-item">
-                    <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        Profile
-                    </a>
-                    <img src="testimonial4.jpg" alt="Client 4" class="testimonial-img">
-                </div>
-            </div>
-        </section>
+        <div class="testimonial-item">
+            <a href="your-linkedin-url" class="linkedin-badge" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Profile
+            </a>
+            <img src="images/testimonial4.jpg" class="testimonial-img" alt="Testimonial 4">
+        </div>
     </div>
-
-    <footer>
-        <p>© 2025 Salah Mosbah. All rights reserved.</p>
-    </footer>
 </body>
 </html>
